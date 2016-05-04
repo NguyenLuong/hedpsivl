@@ -48,8 +48,8 @@
                 .td-tag-content
                   %ul
                     / Đây là 1 tag
-                    %a{:href => "#"}
-                      %button.td-tag-label.hvr-sweep-to-right Toán lớp 1
+                    -@posts.each do |post|
+                      =raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
                     / Kết thúc tag
                     .clear-fix
                 .clear-fix
